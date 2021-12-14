@@ -1,0 +1,5 @@
+.is-active-class {
+    background-color: #4f3f3f;
+    border: 1px solid #ccc;
+    padding: 44px !important;
+}

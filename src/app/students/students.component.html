@@ -1,0 +1,62 @@
+<form *ngIf="ishowform == true" action="" method="POST" role="form">
+    <legend>Thêm mới sinh viên</legend>
+
+    <div class="form-group">
+        <label for="">Tên sinh viên</label>
+        <input type="text" class="form-control" id="" placeholder="">
+    </div>
+   
+    <button  type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<br>
+<!-- <span [ngSwitch]="ishowform">
+<button *ngSwitchCase="false" on-click="toggleForm()" type="button" class="btn btn-success">Thêm mới</button>
+<button *ngSwitchCase="true" on-click="toggleForm()" type="button" class="btn btn-warning">đóng lại</button>
+</span> -->
+
+<button *ngIf="!ishowform" on-click="toggleForm()" type="button" class="btn btn-warning">Thêm mới</button>
+<button *ngIf="ishowform" on-click="toggleForm()" type="button" class="btn btn-warning">đóng lại</button>
+
+<table  *ngIf="ishowform == false" class="table table-hover">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="students.length == 0">
+            <td colspan="4">Không có dữ liệu</td>
+        </tr>
+
+        <tr *ngFor="let student of students; let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ student.name | customUppercase:'arg1':'arg2':'arg3' }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.phone }}</td>
+            <td>{{ student.birthday | date:"dd/MM/yyyy"}}</td>
+            <td>
+                <span [ngSwitch]="student.gender">
+                    <span *ngSwitchCase="true">Nam</span>
+                    <span *ngSwitchCase="false">Nữ</span>
+                    <span *ngSwitchDefault>Undefine</span>
+                </span>
+            </td>
+            <td>
+                <a href=""
+                [ngClass]="{
+                    'btn':true,
+                    'btn-primary':true
+                }"
+                >Sửa</a>
+                <a href="javascript:;" on-click="deleteItem(i)" class="btn btn-danger">Xóa</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
