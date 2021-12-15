@@ -1,0 +1,23 @@
+
+    <td>{{ i+1 }}</td>
+    <td>{{ student.name | customUppercase:'arg1':'arg2':'arg3' }}</td>
+    <td>{{ student.age }}</td>
+    <td>{{ student.phone }}</td>
+    <td>{{ student.birthday | date:"dd/MM/yyyy"}}</td>
+    <td>
+        <span [ngSwitch]="student.gender">
+            <span *ngSwitchCase="true">Nam</span>
+            <span *ngSwitchCase="false">Nữ</span>
+            <span *ngSwitchDefault>Undefine</span>
+        </span>
+    </td>
+    <td>
+        <a href=""
+        [ngClass]="{
+            'btn':true,
+            'btn-primary':true
+        }"
+        >Sửa</a>
+        <a href="javascript:;" on-click="handleDelete(i)"  class="btn btn-danger">Xóa</a>
+    </td>
+

@@ -25,6 +25,8 @@ export class StudentsComponent implements OnInit {
     }
   ];
 
+  title = "Hello anh em ở StudentsComponent";
+
   constructor() { }
 
   ngOnInit(): void {
@@ -51,8 +53,9 @@ export class StudentsComponent implements OnInit {
     // }
   }
 
-  deleteItem(index:number){
-    console.log(123);
+  deleteItem(index:any){
+    console.log('StudentsComponent:deleteItem');
+    console.log(index);
     this.students.splice(index,1);
   }
 

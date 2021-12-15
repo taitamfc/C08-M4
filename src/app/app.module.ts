@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CustomUppercasePipe } from './custom-uppercase.pipe';
 import { CustomReveseStringPipe } from './custom-revese-string.pipe';
 import { StudentsComponent } from './students/students.component';
+import { StudentComponent } from './student/student.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StudentsComponent } from './students/students.component';
     FooterComponent,
     CustomUppercasePipe,
     CustomReveseStringPipe,
-    StudentsComponent
+    StudentsComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,
